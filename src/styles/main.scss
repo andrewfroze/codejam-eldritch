@@ -1,7 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+:root {
+  --theme-font-primary: 'Cinzel', serif;
+  --theme-font-secondary: 'Cormorant Garamond', serif;
+
+  --theme-text-color: #D6C6A3;
+  --theme-text-secondary: #A7B6B5;
+  --theme-accent-color: #C65B59;
+}
+
+h1,
+h2,
+h3,
+button {
+  font-family: var(--theme-font-primary);
+}
+
+h1,
+h2,
+h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.description {
+  color: var(--theme-text-secondary);
+}
+
+.error {
+  color: var(--theme-accent-color);
+}
+
 body {
   background-image: url(../assets/home.png);
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  font-family: var(--theme-font-secondary);
+  color: var(--theme-text-color);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.game-title {
+  text-align: center;
 }
