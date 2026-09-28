@@ -3,7 +3,7 @@ import Ancients from '../assets/Ancients/index'
 const ancientsData = [
   {
     id: 'azathoth',
-    name: 'azathoth',
+    name: 'Азатот',
     cardFace: Ancients.azathoth,
     firstStage: {
       greenCards: 1,
@@ -23,7 +23,7 @@ const ancientsData = [
   },
   {
     id: 'cthulhu',
-    name: 'cthulhu',
+    name: 'Ктулху',
     cardFace: Ancients.cthulhu,
     firstStage: {
       greenCards: 0,
@@ -43,7 +43,7 @@ const ancientsData = [
   },
   {
     id: 'iogSothoth',
-    name: 'iogSothoth',
+    name: 'Йог-Сотот',
     cardFace: Ancients.iogSothoth,
     firstStage: {
       greenCards: 0,
@@ -63,7 +63,7 @@ const ancientsData = [
   },
   {
     id: 'shubNiggurath',
-    name: 'shubNiggurath',
+    name: 'Шуб-Ниггурат',
     cardFace: Ancients.shubNiggurath,
     firstStage: {
       greenCards: 1,

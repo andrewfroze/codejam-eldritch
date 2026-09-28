@@ -1,9 +1,70 @@
+.start-screen {
+  width: fit-content;
+}
+
 .game-options-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
+  max-width: 1440px;
+  width: fit-content;
 }
 
 .start-button {
   width: fit-content;
+  font-size: 24px;
+}
+
+.game-options-form__difficulty__options,
+.game-options-form__ancients__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+
+  &__option {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    img {
+      width: 100%;
+      transition: transform .5s ease;
+    }
+
+    input {
+      display: none;
+    }
+
+    &:has(input:checked) {
+      outline: 3px solid var(--theme-accent-color);
+      outline-offset: 5px;
+    }
+  }
+}
+
+.game-options-form__ancients__options__option {
+  width: 300px;
+
+  &:hover img {
+    transform: scale(1.5);
+  }
+}
+
+.game-options-form__difficulty {
+  width: 100%;
+}
+
+.start-button {
+  background-color: transparent;
+  border: 2px solid var(--theme-text-secondary);
+  color:  var(--theme-text-primary);
+  font-size: 40px;
+  padding-inline: 30px;
+  transition: background-color .5s ease;
+
+  &:hover {
+    background-color: var(--theme-accent-color);
+  }
 }

@@ -1,4 +1,6 @@
-import { createElement, createRadioButtonsSection } from "./element-factory"
+import { createElement, createRadioButtonsSection } from "./element-factory";
+import ancients from "../data/ancients";
+import difficulties from "../data/difficulties";
 
 function renderStartScreen() {
   const startScreen = createElement("section", {
@@ -12,20 +14,21 @@ function renderStartScreen() {
   const ancientsSelectorContainer = createRadioButtonsSection(
     "game-options-form__ancients",
     "ancient",
-    "Select your ancient",
-    ["first", "second", "third", "fourth"],
+    "Выбери древнего",
+    ancients,
+    true,
   );
 
   const levelSelectorContainer = createRadioButtonsSection(
     "game-options-form__difficulty",
     "difficulty",
-    "Select game difficulty",
-    ["Very easy", "Easy", "Normal", "High", "Very High"],
+    "Выбери сложность",
+    difficulties,
   );
 
   const startButton = createElement("button", {
     className: "start-button",
-    textContent: "Start",
+    textContent: "Старт",
     type: "submit",
   });
 

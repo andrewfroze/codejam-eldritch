@@ -12,33 +12,39 @@ function createElement(tagName, attributes = {}) {
   return element;
 }
 
-function createRadioButtons(options, classPrefix, radioName) {
-  const radioButtons = [];
+function createRadioButtons(options, classPrefix, radioName, includeImage = false) {
+  const radioButtonsContainer = createElement("div", {
+    className: `${classPrefix}`,
+  });
   options.forEach((option, index) => {
-    const optionElem = createElement("div", {
+    const ancientCard = createElement("label", {
       className: `${classPrefix}__option`,
     });
 
-    const ancientCard = createElement("input", {
+    if (includeImage) {
+      const optionImage = createElement("img", {
+        src: option.cardFace,
+        alt: option.name,
+      });
+      ancientCard.append(optionImage);
+    }
+
+    const input = createElement("input", {
       className: `${classPrefix}__input`,
       type: "radio",
-      value: option,
+      value: option.id,
       name: radioName,
-      id: option,
+      id: option.id,
       checked: index === 0,
     });
-    const ancientLabel = createElement("label", {
-      className: `${classPrefix}__label`,
-      textContent: option,
-    });
 
-    optionElem.append(ancientCard, ancientLabel);
-    radioButtons.push(optionElem);
+    ancientCard.append(input, option.name);
+    radioButtonsContainer.append(ancientCard);
   });
-  return radioButtons;
+  return radioButtonsContainer;
 }
 
-function createRadioButtonsSection(className, radioName, title, options) {
+function createRadioButtonsSection(className, radioName, title, options, includeImage = false) {
   const container = createElement("div", {
     className: className,
   });
@@ -49,10 +55,11 @@ function createRadioButtonsSection(className, radioName, title, options) {
   });
   container.append(titleElem);
 
-  container.append(...createRadioButtons(
+  container.append(createRadioButtons(
     options,
     `${className}__options`,
     radioName,
+    includeImage,
   ));
   return container;
 }

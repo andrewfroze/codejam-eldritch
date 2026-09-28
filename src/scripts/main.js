@@ -9,7 +9,7 @@ document.body.append(header, main, footer);
 
 const gameTitle = createElement("h1", {
 className: "game-title",
-textContent: "Eldritch Horror",
+textContent: "Древний ужас",
 });
 
 header.append(gameTitle);
